@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interval Example 2</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+    function Foo(){
+        var i=0;
+        return function(){
+            document.write(i++);
+        }
+    }
+    var f1=Foo(),f2=Foo();
+    f1();
+    f1();
+    //p180
+    
+    //执行之后都会返回一个匿名函数，这个匿名函数的作用域链被初始化为其包含函数的活动对象(这里也就是i)和全局变量对象，
+    //f1执行之后i并不会销毁，因为返回的匿名函数还要引用i，i仍然在内存中，所以执行两次之后i的值变成了1，
+
+    //这是一个闭包，闭包可以用在许多地方。它的最大用处有两个，一个是前面提到的可以读取函数内部的变量，另一个就是让这些变量的值始终保持在内存中。
+
+    f2();//f1(),f2()分别创建了自己的执行环境，所以它们两个是相互独立的
+
+    //010
+    </script>
+</body>
+</html>

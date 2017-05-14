@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interval Example 2</title>
+</head>
+<body>
+    <script type="text/javascript">
+    //当new Array数组长度为2及以上，结果都是NaN，为空，0，1时，结果是0；
+    console.log(+new Array(2));//NaN
+    console.log(+[undefined,undefined]);//NaN
+
+
+    console.log(+new Array());//0
+
+    console.log(+new Array(0));//0
+    console.log(+[]);//0 
+
+
+    console.log(+new Array(1));//0
+    console.log(+[undefined]);//0  
+
+
+    console.log(+[1,2])//NaN 
+    console.log(+[1]);//1 
+
+    //Object的每个实例都具有下列属性和方法
+
+
+    //最后
+    //toString():返回对象的字符串表示.
+    //valueof() :返回对象的字符串,数值,或布尔表示.通常与toString()方法返回的值相同.
+    
+
+    //Number()函数的转换规则如下:
+
+
+    //最后:如果是对象,则调用对象的valueof()方法,然后把返回的值再依照前面的规则转换,
+    //如果转换的结果是NaN,则调用对象的toString()方法,然后把返回的字符串再依照前面的规则转换
+//
+//
+    
+
+
+    console.log(([])?true:false);        //true
+    console.log(([]==false?true:false)); //true 
+    //[]==0-->
+    //0==0
+    console.log(({}==false)?true:false)  //false
+    //{}==0-->
+    //NaN==0-->
+
+
+    //在转换不同的数据类型时,相等操作符遵循规则如下:
+    //false-->0
+    //字符串和数值-->数值
+    //对象,则调用对象的valueof()方法 eg:[0].valueof()=0;
+
+    //Boolean()函数的转换规则如下:返回false的只有
+    //""
+    //0
+    //NaN
+    //null
+    //undefined
+
+
+
+    </script>
+</body>
+</html>

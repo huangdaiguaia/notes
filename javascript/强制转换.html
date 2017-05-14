@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interval Example 2</title>
+</head>
+<body>
+    <script type="text/javascript">
+// 参考以前在网上找到的双等号引起的类型转换过程
+// 一、首先看双等号前后有没有NaN，如果存在NaN，一律返回false。
+// 二、再看双等号前后有没有布尔，有布尔就将布尔转换为数字。（false是0，true是1）
+// 三、接着看双等号前后有没有字符串, 有三种情况：
+// 1、对方是对象，对象使用toString()或者valueOf()进行转换；
+// 2、对方是数字，字符串转数字；（前面已经举例）
+// 3、对方是字符串，直接比较；
+// 4、其他返回false
+// 四、如果是数字，对方是对象，对象取valueOf()或者toString()进行比较, 其他一律返回false
+// 五、null, undefined不会进行类型转换, 但它们俩相等
+    var a = [0];
+    if(a){//这是一个对象 所以转换为为true
+        console.log(a==true); //强制转换0==1
+    }else {
+        console.log("wut");
+    }
+
+
+    </script>
+</body>
+</html>

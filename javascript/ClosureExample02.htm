@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Closure Example 2</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+        
+            function createFunctions(){
+                var result = new Array();
+                
+                for (var i=0; i < 10; i++){
+                    result[i] = function(num){
+                        return function(){
+                            return num;
+                        };
+                    }(i);
+                }
+                
+                return result;
+            }
+            
+            //返回长度为10的函数数组
+            var values = createFunctions();
+            console.log(values[2]());  //2
+            console.log(values[5]());  //5
+
+
+            // var funcs = createFunctions();            
+            // //every function outputs 10
+            // for (var i=0; i < funcs.length; i++){
+            //     document.write(funcs[i]() + "<br />");
+            // }
+
+        </script>
+     
+    </body>
+</html>

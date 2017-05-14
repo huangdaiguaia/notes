@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interval Example 2</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+    var f = function g() {
+        return 23;
+    };
+    
+    // typeof g();
+    //在 JS 里，声明函数只有 2 种方法：
+    //第 1 种： function foo(){...} （函数声明）
+    //第 2 种： var foo = function(){...} （等号后面必须是匿名函数，这句实质是函数表达式）
+
+    //除此之外，类似于 var foo = function bar(){...} 这样的东西统一按 2 方法处理，
+    //即在函数外部无法通过 bar 访问到函数，因为这已经变成了一个表达式。
+    //但为什么不是 "undefined"？
+    //这里如果求 typeof g ，会返回 undefined，但求的是 g()，所以会去先去调用函数 g，这里就会 直接 抛出异常，所以是 Error。
+     
+    // Chrome：
+    // typeof g()    //  无输出响应
+    // typeof g      //  undefined
+    typeof f()    //  number
+    // typeof f      //  function
+     
+
+
+    </script>
+</body>
+</html>

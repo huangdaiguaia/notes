@@ -1,0 +1,232 @@
+----------------------------javascript-------------------
+css中在html中加样式:style="display:block;"
+js中加样式:
+ul.style.display = 'block';       // :变= 还有不要忘了加"" 还有 .
+oDiv.style.cssText = ' width:200px; height:200px; ';
+oP.className = 'red';
+
+不允许出现-:font-size => fontSize
+
+class为保留字(即以后有可能成为关键字),
+所以在给某个元素添加类的时候不能.class => .className
+
+不能作为判断条件:
+背景
+color red #f00 
+相对路径
+
+.actve一直变
+思路一：全部清空，当前添加(很好操作,但浏览器很累)
+for( var i=0; i<aLi.length; i++ ){
+	aLi[i].className = '';
+}
+this.className = 'active';
+
+思路二：清空上个，当前添加
+oldLi.className = '';
+oldLi = this;
+this.className = 'active';
+
+ECMAScript：标准、核心
+HTML 标签类型：block、inline、inline-block、table……
+JS中的数据类型：
+数字(NaN)、字符串、布尔、函数、对象(obj[元素]、[]、{}、null)、未定义
+
+真：[7]
+非0的数字、非空字符串[空格也算非空]、true、函数、能找到的元素、
+[]、{}
+假：[7]
+0、NaN、空字符串''、false、不能找到的元素、null、未定义
+
+typeof 判断数据类型
+
+显式类型转换（强制类型转换）：
+Number()
+parseInt()
+parseFloat()
+
+隐式类型转换：
+  +               200 + '3'   变成字符串
+  - * / %       '200' - 3     变成数字
+  ++ --           变成数字
+  > <             数字的比较 、字符串的比较
+  ! 取反          把右边的数据类型转成布尔值
+  ==
+
+NaN：not a number 不是个 数字 的 数字类型
+isNaN();Number();是老铁
+//判断不是NaN
+//isNaN(arr[i])===false
+//arr[i]===arr[i]
+
+HTML 中拿到的内容，类型都是字符串
+----------------------------------------------------------
+FF[fixfox]不能对[if for]里面的函数进行预解析,所以全局变量和函数尽量放在最外面
+
+for(var i=0;i<aLi.length;i++){  //只有for循环执行完了才可以点击[不执行完鼠标点不了]
+  aLi[i].onclick=function(){
+      //这里面是局部作用域
+      alert(i);//3
+  }
+}
+//自己理解
+这个循环是添加点击[事件事件]aLi[i].onclick 就执行到这里 后面的
+=function(){
+    //这里面是局部作用域
+    alert(i);//3
+  }
+}
+要当鼠标点击时才执行
+-------------------------------------------------------------------
+重用代码：
+  1、尽量保证 HTML 代码结构一致，可以通过父级选取子元素
+  2、把核心主程序实现，用函数包起来
+  3、把每组里不同的值找出来，通过传参实现
+
+// alert(0||-1);      //-1
+// alert(-1||0);      //-1
+
+// alert(1||-1);      //1
+// alert(-1||1);      //-1
+
+// alert(2||-1);      //2
+//alert(-1||2);       //-1
+
+// alert(1||0);       //1
+// alert(-1||-2);     //-1
+//故:两个操作数中只有一个真值时,返回这个真值[只有0是假值]
+//   两个操作数都是真值时,返回第一个[即前面那个]值
+
+return[函数中]：返回值
+  1) 函数名+括号：fn1() ==>  return 后面的值；
+  2) 所有函数默认返回值：未定义；
+  3) return 后面任何代码都不执行了；
+
+arguments[函数中]
+fn1( 1,2,3 );    // 实参——实际传递的参数
+// function fn1( a,b,c ){}   // 形参——形式上，abc这些名代表123
+
+function fn1(){
+  // arguments => [ 1,2,3 ]   // 实参的集合 不是数组,没有数组的那些方法
+  // alert( arguments );
+  // alert( arguments.length );
+  // alert( arguments[arguments.length-1] );
+}
+当函数的参数个数无法确定的时候：用 arguments
+
+// 直接调用      
+// fn1();   
+// 事件调用      
+// document.onclick = fn1;      
+//定时器也可以调用
+//setInterval( 函数, 毫秒 )    重复执行（发动机
+//setTimeout( 函数, 毫秒 )      执行一次（炸弹
+定时器如果是由用户控制的,一定要先关后开
+
+
+
+--------------------------------------------------------------------------------
+消除浮动
+父级div定义伪类
+.clearfix::after{
+	content:'';
+	display: block;
+	clear: both;
+}
+
+基本类型变量用八字节内存
+
+js中字符串连接用那个比较高效？Array.join()
+
+<sup></sup>上标
+<sub></sub>下标
+
+超小屏，小屏，中屏和大屏:768 992 1200
+
+<hr />定义水平线
+
+HTML注释 
+<!--注释的内容--> 
+
+CSS注释 
+/* 注释内容 */ 
+
+JS注释 
+单行注释以 // 开头。 
+多行注释以 /* 开始，以 */ 结尾。
+
+border
+一个值:四条边
+两个值:上下,左右
+三个值:上,左右,下
+四个值:上,右,下,左
+
+可视屏幕高
+sw=$(window).width();
+
+查找
+:/     回车enter
+
+与调试器结合:
+console.log()
+
+ul和li无序列表
+ol和li有序列表 这两个都是这样搭配着使用的
+
+a中不能再嵌套a
+
+h1标签:加粗、大号文字
+
+&nbsp:Non-Breaking Space
+
+在给span设置宽度的时候 一定不要忘记display:block;
+----------------------------块 行内 可变-----------
+display:block;
+块级元素独占一行,宽度自动填满其父元素的宽度 块元素内可放内联元素和块元素 
+div p ul li 
+
+display:inline;
+行内元素排列在同一行中,直到这行排不下才换行 内联元素内可放文本和内联元素
+行内元素 width height 无效
+         padding margin竖直方向无效
+a span strong em img input label
+
+display:inline-block;
+元素呈现为内联对象，周围元素保持在同一行，但可以设置宽度和高度地块元素
+
+可变元素(可根据上下文语境):button
+
+inline-block的IE兼容性问题：
+1.IE不识别display:inline-block;
+2.使用display:inline-block在IE下会触发layout(触发了layout，而它本就是行布局，所以触发后，块元素依然还是行布局，而不会如Opera中块元素呈递为内联对象)
+3.触发块元素的layout（如：zoom:1等)
+
+IE下块元素如何实现display:inline-block的效果？
+1.
+div {display:inline-block;} 
+div {display:inline;}
+2.
+div {display:inline; zoom:1;}
+--------------------------------------属性的可继承性--------------------------
+权重 ：内联 权重1000 ，
+       ID 选择器 权重：100， 
+       类 伪类 属性选择器 权重：10 ，
+       类型选择器 权重：1 
+       除!important ，内联权重最大！
+     
+css样式选择器的优先级相同时，后面定义的样式生效。       
+css属性的继承：
+
+不可继承的：display、margin、border、padding、background、height、min-height、max- height、width、min-width、max-width、overflow、position、left、right、top、 bottom、z-index、float、clear、table-layout、vertical-align、page-break-after、 page-bread-before和unicode-bidi。 
+
+所有元素可继承：visibility和cursor。 
+
+内联元素可继承：letter-spacing、word-spacing、white-space、line-height、color、font、 font-family、font-size、font-style、font-variant、font-weight、text- decoration、text-transform、direction。 
+
+块状元素可继承：text-indent和text-align。 
+
+列表元素可继承：list-style、list-style-type、list-style-position、list-style-image。 
+
+表格元素可继承：border-collapse。
+------------------------------------------------------------------------------------
+
