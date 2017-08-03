@@ -1,0 +1,42 @@
+1.Object.keys(object)
+返回:一个数组，其中包含对象的可枚举属性和方法的名称。
+
+2.
+浏览器                        内核 Trident Gecko Presto Webkit
+IE
+Chrome
+FireFox
+Safari
+Opera
+3.box-sizing : content-box|border-box|inherit
+
+4.导入样式
+link     XHTML标签   无兼容性问题    与页面同时加载           用于定义RSS,定义rel连接属性
+@import  CSS2.1      IE5以上         页面加载完成后才加载     只能加载CSS
+
+5.
+HTML4.01  基于SGML[需要对DTD进行引用]
+HTML5     不基于SGML
+
+6.<!DOCTYPE> 告诉浏览器解析器用什么[文档标准]解析文档
+
+7.HTML5
+  canvas
+  video audio
+  localStorage[长期] sessionStorage[关闭浏览器后 数据删除] 本地离线储存 不会把数据发给服务器
+  语义化标签[artical footer header nav section ]
+  表单控件[calendar date time email url search]
+  新技术[webworker websocket Geolocation]
+
+8.this
+  函数的直接调用者
+  new关键字[指向new出来的对象]
+  事件中[触发事件的对象][IE attachEvent 时 :全局对象Window]
+
+9.eval
+字符串解析成js代码并运行[避免使用 不安全 耗性能]
+JSON字符窜->JSON对象  var obj=eval('('+str+')');
+
+10.HTTP状态码
+   200: OK 正常返回信心
+   404: Not Found 找不到与url相匹配的资源

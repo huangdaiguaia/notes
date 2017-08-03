@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrap{
+	width: 1200px;
+	margin: 10px auto;
+	/*border: 1px solid;*/
+}
+.head{
+	height: 100px;
+	border: 1px solid #0f0;
+	margin-top: 10px;
+}
+.logo{
+	width: 70px;
+	height: 70px;
+	float: left;
+	border: 1px solid #f00;
+	margin: 15px;
+}
+.user{
+	height: 30px;
+	width: 150px;
+	float: right;
+	border: 1px solid #000;
+	margin: 60px 15px auto auto;
+}
+.clearfix{
+	zoom: 1;
+}
+.clearfix:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+.content{
+	border: 1px solid #000;
+	margin-top: 10px;
+}
+.auto{
+	height: 400px;
+	margin-right: 202px;
+	border: 1px solid #000;
+}
+.aside{
+	width: 200px;
+	height: 20px;
+	float: right;
+	border: 1px solid #f00;
+}
+.foot{
+	height: 20px;
+	border: 1px solid #000;
+	margin-top: 10px;
+}
+</style>
+<script>
+	window.onload=function(){
+		/*
+		//1.
+		function obj(name){
+			if(name){
+				this.name = name;
+			}
+			return this;
+		}
+		obj.prototype.name = "name2";
+
+		var a = obj("name1");
+		//new操作， new obj 等价于 new obj() ,实例化一个对象
+		var b = new obj;
+
+		//alert(a.name);//“name1”;
+		//alert(b.name);// “name2”;
+
+		//2.Fibonacci数列的数学表达式就是：F(n) = F(n-1) + F(n-2)
+		function getNthFibonacci(count){
+			if(count<0){return 0;};
+			if(count<=1){return 1;};
+
+			var arr=[];
+			arr[0]=1;
+			arr[1]=1;
+
+			for(var i=2;i<=count;i++){
+				arr[2]=arr[0]+arr[1];
+
+				arr[0]=arr[1];
+				arr[1]=arr[2];
+			}
+			return arr[2];
+		}
+
+		//alert(getNthFibonacci(4));
+		*/
+
+		/*var colors=['red','blue','green'];
+
+		//var changed=colors.toString();
+		var changed2=colors.valueOf();
+
+		alert(typeof(colors));     //object object
+		//alert(typeof(changed));   //string
+		alert(typeof(changed2));    //object
+
+		alert(colors);
+		alert(changed);
+		alert(changed2);*/
+
+		/*
+		var num=[1,2,3,4,5,6,7,8,9];
+
+		var result=num.filter(function(item){ //,index,array可以不写
+		  return (item>3);
+		});
+		alert(num);
+		alert(result);
+
+		result=num.slice();
+		num2=num;
+		alert(num2);
+		alert(num2==num);
+
+		alert(result);
+		alert(result==num);
+		result2=num.concat();
+		alert(result2);
+		alert(result2==num);
+		*/
+
+
+	}
+</script>
+</head>
+<body>
+<div class="wrap">
+	<div class="head clearfix">
+		<div class="logo">
+
+		</div>
+		<div class="user">
+
+		</div>
+	</div>
+	<div class="content">
+	<!-- 浮动元素要在非浮动元素的前面才能保证浮动后能与非浮动元素在同一行显示，否则，左右两侧的div会在不同行里面显示 -->
+		<div class="aside">
+
+		</div>
+		<div class="auto">
+
+		</div>
+
+	</div>
+	<div class="foot">
+
+	</div>
+</div>
+
+</body>
+</html>

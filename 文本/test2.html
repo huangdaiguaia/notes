@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+    window.onload=function(){
+
+    	/*str='d[0].e';
+    	var arr1=str.replace('[', '.').replace(']', '');
+		var arr2=str.replace(/\[(\w)\]/g,'.$1');
+
+		alert(arr1); //d.0.e
+		alert(arr2); //d.0.e*/
+
+		//temp = obj; eval('temp.'+str)
+		var object = {
+		b: { c: 4 }, d: [{ e: 5 }, { e: 6 }]
+		};
+
+		/*function parse(obj,str){
+		//把[]都替换成.的形式
+			var arr1=str.replace('[', '.').replace(']', '');
+			//var arr2=arr1.split('.');
+			return obj+arr1;
+		}*/
+
+		function parse(obj, str) {
+		    str.replace('[', '.').replace(']', '').split('.').map((ele) => obj = obj[ele.trim()]);
+		    return obj || 'undefined';
+		}
+		/*function parse(obj,str){
+		 
+		   var arr=str.replace(/\[(\w)\]/g,'.$1').split('.'),i=0,tmp=obj;//把[]都替换成.的形式
+		 
+		   while(i<arr.length&&tmp){
+		 
+		      tmp=tmp[arr[i++]];
+		 
+		   }
+		 
+		   //console.log(tmp)
+		 
+		   return tmp!=undefined?tmp:'undefined';//注意undefined要返回字符串
+		 
+		}*/
+
+		console.log( parse(object, ‘b.c’) == 4 ); //true
+		console.log( parse(object, ‘d[0].e’) == 5 ); //true
+		console.log( parse(object, ‘d.0.e’) == 5 ); //true
+		console.log( parse(object, ‘d[1].e’) == 6 ); //true
+		console.log( parse(object, ‘d.1.e’) == 6 ); //true
+		console.log( parse(object, ‘f’) == ‘undefined’ ); //true
+
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
